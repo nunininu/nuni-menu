@@ -1,5 +1,5 @@
 import streamlit as st
-from nuni_menu.db import insert_menu
+from nuni_menu.db import insert_menu, members
 import pandas as pd
 
 st.set_page_config(page_title="BulkInsert", page_icon="📈")

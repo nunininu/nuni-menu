@@ -2,11 +2,11 @@ import streamlit as st
 from nuni_menu.db import select_table
 import matplotlib.pyplot as plt
 
-st.set_page_config(page_title="Stat", page_icon="📊")
-st.markdown("# Stat")
-st.sidebar.header("Stat Page")
+st.set_page_config(page_title="Chart", page_icon="📊")
+st.markdown("# Chart")
+st.sidebar.header("Chart Page")
 
-st.subheader("통계")
+st.subheader("차트")
 select_df = select_table()
 gdf = select_df.groupby('ename')['menu'].count().reset_index()
 

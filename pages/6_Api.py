@@ -1,19 +1,20 @@
 import streamlit as st
 import requests
 import nuni_menu.constraints as const
+import datatime
 
 st.set_page_config(page_title="API", page_icon="🍽️")
 
 st.markdown("# 🍽️ API")
 st.sidebar.header("나이계산기")
 
-dt = st.date_input("생일입력")
+dt = st.date_input("생일입력", min_value=datatime.date(1900,1,1))
 if st.button("결과 보기"):
     headers = {
         'accept': 'appliication/json'
     }
     r = requests.get(f'{const.API_AGE}/{dt}', headers = headers)
-    # TODO age 받아노는 부분을 만ㄷ늘어 주세요ㅕ
+    
     if r.status_code == 200:
         data = r.json()
         age = data['age']

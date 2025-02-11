@@ -1,14 +1,14 @@
 import streamlit as st
 import requests
 import nuni_menu.constraints as const
-import datatime
+import datetime
 
 st.set_page_config(page_title="API", page_icon="🍽️")
 
 st.markdown("# 🍽️ API")
 st.sidebar.header("나이계산기")
 
-dt = st.date_input("생일입력", min_value=datatime.date(1900,1,1))
+dt = st.date_input("생일입력", min_value=datetime.date(1900,1,1))
 if st.button("결과 보기"):
     headers = {
         'accept': 'appliication/json'

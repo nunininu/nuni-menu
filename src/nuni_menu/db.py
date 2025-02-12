@@ -57,7 +57,7 @@ def select_table():
     cursor.close()
     conn.close()
 
-    df = pd.DataFrame(rows, columns=['menu','ename','dt'])
+    df = pd.DataFrame(rows, columns=['menu_name','name','dt'])
     return df
 
 def select_members_without_lunch():
